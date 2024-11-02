@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>CountDown</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Orbitron');
+            body{
+                font-family: 'orbitron', sans-serif;
+                background-color: #07060a;
+                color: #ff0000;
+                font-size: 42px;
+                text-align: center;
+            }
+            img{
+                max-width: 100%;
+            }
+            img#fire:hover{
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <p id="time">Countdown</p>
+        <img src="img/xm.png" alt="..." id="fire" onclick="xequeMate()">
+        <script>
+            let check = false;
+            function xequeMate() {
+                if (check === false) {
+                    check = true;
+                    let timer1 = setInterval(function(){start()},  1000);
+                    let timer2 = setInterval(function(){end()}, 13200);
+                    let count = 10;
+                    function start(){
+                        soundBeep();
+                        document.getElementById("time").innerHTML = count;
+                        count --;
+                        if(count < 0){
+                            clearInterval(timer1);
+                            soundThunder();
+                            document.getElementById("fire").src="img/explosion.gif";
+                            document.getElementById("time").innerHTML = "FIM!";
+                        }
+                    }
+                }
+            }
+            function soundThunder() {
+                let beep = new Audio();
+                beep.src = "audio/Thunder_Crack.mp3";
+                beep.play();
+            }
+            function soundBeep() {
+                let beep = new Audio();
+                beep.src = "audio/Beep_Short.mp3";
+                beep.play();
+
+            }
+            function end(){
+                document.getElementById("fire").src = "img/clean.png";
+            }
+                
+
+        </script>
+    </body>
+</html>

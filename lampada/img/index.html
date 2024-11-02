@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampada</title>
+</head>
+
+
+<body>
+    <h1>Exercício da lampada</h1>
+    <img src="off.jpg" alt="Lampada desligada" id="foto">
+    <form>
+        <input type="button" value="On" onclick="on()">
+        <input type="button" value="Off" onclick="off()">
+        <input type="button" value="Piscar" onclick="piscar()">
+    </form>
+    <script>
+        function on() {
+            document.getElementById("foto").src = "on.jpg";
+        }
+        function off() {
+            document.getElementById("foto").src = "off.jpg";
+        }
+        function piscar() {
+            
+            let contador = 0, intervalo = 0
+            while(contador < 10){
+                intervalo += 300
+                setTimeout("on()", intervalo);
+                intervalo += 300
+                setTimeout("off()", intervalo);
+                contador++;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

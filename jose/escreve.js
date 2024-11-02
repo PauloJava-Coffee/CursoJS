@@ -1,0 +1,1 @@
+document.write("<h2 style = 'color: blue';>Bruno</h2>")
