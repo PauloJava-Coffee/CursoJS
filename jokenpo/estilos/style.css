@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+form{
+  
+    height: 10vh;
+    width: 15vw;
+}
+form > div{
+    display: inline-block;
+    border: 1px solid black;
+}
+div#radio{
+    padding-right: 20px;
+    margin-left: 20%;
+}
+
